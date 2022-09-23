@@ -16,6 +16,24 @@ def convert_temp(unit_in, unit_out, temp):
     """
 
     # YOUR CODE HERE
+    if type(temp) == int or type(temp) == float:
+        if unit_in == "f" and unit_out == "f":
+            return temp
+        elif unit_in == "c" and unit_out == "c":
+            return temp
+        elif unit_in == "f" and unit_out == "c":
+            temp = (temp - 32) * 5/9
+            return temp
+        elif unit_in == "c" and unit_out == "f":
+            temp = (temp * 9/5) + 32
+            return temp
+        else:
+            return f"Invalid Unit {unit_in}, {unit_out}"
+    else:
+        return "invalid number!"
+          
+
+    
 
 
 print("c", "f", 0, convert_temp("c", "f", 0), "should be 32.0")
